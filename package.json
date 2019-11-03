@@ -1,0 +1,19 @@
+{
+  "name": "api-rest",
+  "version": "1.0.0",
+  "description": "Api sencilla en Node + Express + Mysql",
+  "main": "app/index.js",
+  "scripts": {
+    "dev": "npx nodemon app/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/milang90/node-api-mysql.git"
+  },
+  "author": "Milan Gotera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/milang90/node-api-mysql/issues"
+  },
+  "homepage": "https://github.com/milang90/node-api-mysql#readme"
+}
