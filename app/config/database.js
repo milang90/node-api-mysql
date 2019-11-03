@@ -1,5 +1,7 @@
 'use strict';
 
+const mysql = require('mysql');
+
 const config = {
     host: 'localhost',
     user: 'root',
@@ -7,6 +9,6 @@ const config = {
     database: 'node_api',
 };
 
-const pool = mysql.createPool(config);
+const Mysql = mysql.createPool(config);
 
-module.exports = pool;
+module.exports = Mysql;
