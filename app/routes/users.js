@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
 router.get('/search', function(req, res) {
     UsersController.search(req, res);
 });
-/*
+
 router.get('/:id', function(req, res) {
     UsersController.show(req, res);
 });
@@ -26,6 +26,5 @@ router.put('/:id', function(req, res) {
 router.delete('/:id', function(req, res) {
     UsersController.remove(req, res);
 });
-*/
 
 module.exports = router;
