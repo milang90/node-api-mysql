@@ -57,6 +57,7 @@ const UsersController = {
             errorData.email = "El campo email es requerido";
             errors++;
         }
+
         if(errors){
             return res.send(403, {
                 errors: errorData,
@@ -98,6 +99,7 @@ const UsersController = {
         }
 
         var id = req.params.id;
+        
         Mysql.query(`SELECT * FROM users WHERE id='${id}'`, (error, result) => {
             if(error) {
                 return res.send(500, {
@@ -109,7 +111,8 @@ const UsersController = {
                     message: 'No hemos encontrado el usuario'
                 });
             }
-            Mysql.query(`UDTATED users SET name='${formData.name}', email='${formData.email}' WHERE id='${id}'`, (error, result) => {
+            
+            Mysql.query(`UPDATE users SET name='${req.body.name}', email='${req.body.email}' WHERE id='${id}'`, (error, result) => {
                 if(error) {
                     return res.send(500, {
                         message: 'Error al guardar los datos',
@@ -119,6 +122,7 @@ const UsersController = {
                     message: 'Se actualizaron los datos correctamente',
                 });
             });
+            
         });
     },
 
@@ -131,7 +135,7 @@ const UsersController = {
                 });
             }
             Mysql.query(`DELETE FROM users WHERE id=${id}`, (error, result) => {
-                return res.send(500, {
+                return res.send(200, {
                     message: 'Se ha eliminado el usuario correctamente',
                 });
             });
